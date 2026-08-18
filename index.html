@@ -1,160 +1,381 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FOCUS SHOP - Free Fire Top Up</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FOCUS SHOP - Free Fire Top Up</title>
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-    }
+<style>
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:Arial,sans-serif;
+}
 
-    body {
-      background: #080812;
-      color: white;
-      min-height: 100vh;
-    }
+body{
+  background:#070812;
+  color:white;
+  min-height:100vh;
+}
 
-    header {
-      padding: 25px 20px;
-      text-align: center;
-      background: linear-gradient(135deg, #15152e, #24104d);
-      border-bottom: 1px solid #5b35ff;
-    }
+header{
+  text-align:center;
+  padding:35px 20px 25px;
+  background:linear-gradient(135deg,#10134d,#070812);
+}
 
-    header h1 {
-      font-size: 32px;
-      color: #9d7bff;
-      text-shadow: 0 0 15px #6c3cff;
-    }
+.logo{
+  font-size:42px;
+  font-weight:900;
+  color:#fff;
+  text-shadow:
+    0 0 8px #6c4cff,
+    0 0 20px #6c4cff;
+}
 
-    header p {
-      margin-top: 8px;
-      color: #ccc;
-    }
+.subtitle{
+  margin-top:8px;
+  color:#b9b9c8;
+  font-size:15px;
+}
 
-    .hero {
-      text-align: center;
-      padding: 55px 20px;
-    }
+.contact-price{
+  display:inline-block;
+  margin-top:18px;
+  padding:9px 18px;
+  border:1px solid #6c4cff;
+  border-radius:30px;
+  color:#d7cfff;
+  box-shadow:0 0 15px #392b9b;
+}
 
-    .hero h2 {
-      font-size: 35px;
-      margin-bottom: 12px;
-    }
+.container{
+  max-width:900px;
+  margin:auto;
+  padding:20px;
+}
 
-    .hero span {
-      color: #8d5cff;
-    }
+.title{
+  text-align:center;
+  font-size:25px;
+  margin:20px 0 8px;
+}
 
-    .hero p {
-      color: #aaa;
-      margin-bottom: 25px;
-    }
+.desc{
+  text-align:center;
+  color:#aaa;
+  margin-bottom:25px;
+}
 
-    .btn {
-      display: inline-block;
-      padding: 13px 25px;
-      border-radius: 30px;
-      background: linear-gradient(90deg, #633cff, #a66cff);
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      box-shadow: 0 0 20px #633cff;
-    }
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:12px;
+}
 
-    .products {
-      padding: 20px;
-      max-width: 900px;
-      margin: auto;
-    }
+.card{
+  background:linear-gradient(145deg,#111326,#0b0c18);
+  border:1px solid #272b52;
+  border-radius:15px;
+  padding:18px 12px;
+  text-align:center;
+  transition:.2s;
+}
 
-    .products h2 {
-      text-align: center;
-      margin-bottom: 25px;
-      font-size: 28px;
-    }
+.card:hover{
+  transform:translateY(-3px);
+  border-color:#765cff;
+  box-shadow:0 0 18px #30256d;
+}
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 15px;
-    }
+.diamond{
+  font-size:25px;
+}
 
-    .card {
-      background: #121222;
-      border: 1px solid #30205e;
-      border-radius: 15px;
-      padding: 20px;
-      text-align: center;
-    }
+.amount{
+  font-size:18px;
+  font-weight:bold;
+  margin:7px 0;
+}
 
-    .card h3 {
-      color: #a77cff;
-      margin-bottom: 10px;
-    }
+.price{
+  color:#9d8cff;
+  font-size:20px;
+  font-weight:bold;
+}
 
-    .price {
-      font-size: 22px;
-      font-weight: bold;
-      margin-bottom: 15px;
-    }
+.order{
+  margin-top:10px;
+  width:100%;
+  border:0;
+  border-radius:10px;
+  padding:9px;
+  background:linear-gradient(90deg,#563cff,#8c6cff);
+  color:white;
+  font-weight:bold;
+  cursor:pointer;
+}
 
-    footer {
-      text-align: center;
-      padding: 35px 20px;
-      margin-top: 40px;
-      color: #888;
-    }
-  </style>
+.recommend{
+  margin-top:35px;
+}
+
+.packages{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:12px;
+}
+
+.package{
+  padding:20px 10px;
+  border-radius:15px;
+  text-align:center;
+  font-weight:bold;
+  background:#111326;
+  border:1px solid #333;
+}
+
+.blue{
+  border-color:#168cff;
+}
+
+.yellow{
+  border-color:#ffc400;
+}
+
+.purple{
+  border-color:#a95cff;
+}
+
+.package .emoji{
+  font-size:30px;
+}
+
+.package-price{
+  font-size:21px;
+  margin-top:7px;
+}
+
+.info{
+  margin-top:35px;
+  background:#10111f;
+  border-radius:16px;
+  padding:22px;
+  border:1px solid #292b45;
+}
+
+.info h2{
+  margin-bottom:15px;
+}
+
+.info p{
+  margin:10px 0;
+  color:#d4d4df;
+}
+
+.payment{
+  margin-top:20px;
+}
+
+.contact{
+  margin-top:35px;
+  text-align:center;
+}
+
+.contact-box{
+  display:flex;
+  gap:12px;
+  justify-content:center;
+  flex-wrap:wrap;
+  margin-top:18px;
+}
+
+.contact a{
+  text-decoration:none;
+  color:white;
+  padding:12px 22px;
+  border-radius:12px;
+  font-weight:bold;
+  background:#151729;
+  border:1px solid #343752;
+}
+
+footer{
+  text-align:center;
+  color:#777;
+  padding:30px 10px;
+  font-size:13px;
+}
+
+@media(max-width:600px){
+  .grid{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .packages{
+    grid-template-columns:1fr;
+  }
+
+  .logo{
+    font-size:34px;
+  }
+}
+</style>
 </head>
 
 <body>
 
-  <header>
-    <h1>FOCUS SHOP</h1>
-    <p>เติมเพชร Free Fire ง่ายๆ</p>
-  </header>
+<header>
+  <div class="logo">FOCUS SHOP</div>
+  <div class="subtitle">FREE FIRE TOP UP</div>
+  <div class="contact-price">ราคาติดต่อ</div>
+</header>
 
-  <section class="hero">
-    <h2>เติมเพชร <span>Free Fire</span></h2>
-    <p>ร้านเติมเกม FOCUS SHOP</p>
-    <a href="#products" class="btn">ดูสินค้าทั้งหมด</a>
-  </section>
+<div class="container">
 
-  <section class="products" id="products">
-    <h2>แพ็กเกจเพชร</h2>
+<h2 class="title">💎 ราคาเติมเพชร</h2>
+<p class="desc">เลือกจำนวนเพชรที่ต้องการ แล้วกดเพื่อสั่งซื้อ</p>
 
-    <div class="grid">
+<div class="grid">
 
-      <div class="card">
-        <h3>แพ็กเกจ 1</h3>
-        <div class="price">33 บาท</div>
-        <a href="#" class="btn">สั่งซื้อ</a>
-      </div>
+<div class="card"><div class="diamond">💎</div><div class="amount">33 เพชร</div><div class="price">11 ฿</div><button class="order" onclick="order('33 เพชร - 11 บาท')">สั่งซื้อ</button></div>
 
-      <div class="card">
-        <h3>แพ็กเกจ 2</h3>
-        <div class="price">65 บาท</div>
-        <a href="#" class="btn">สั่งซื้อ</a>
-      </div>
+<div class="card"><div class="diamond">💎</div><div class="amount">101 เพชร</div><div class="price">30 ฿</div><button class="order" onclick="order('101 เพชร - 30 บาท')">สั่งซื้อ</button></div>
 
-      <div class="card">
-        <h3>แพ็กเกจ 3</h3>
-        <div class="price">285 บาท</div>
-        <a href="#" class="btn">สั่งซื้อ</a>
-      </div>
+<div class="card"><div class="diamond">💎</div><div class="amount">172 เพชร</div><div class="price">49 ฿</div><button class="order" onclick="order('172 เพชร - 49 บาท')">สั่งซื้อ</button></div>
 
-    </div>
-  </section>
+<div class="card"><div class="diamond">💎</div><div class="amount">240 เพชร</div><div class="price">68 ฿</div><button class="order" onclick="order('240 เพชร - 68 บาท')">สั่งซื้อ</button></div>
 
-  <footer>
-    © 2026 FOCUS SHOP
-  </footer>
+<div class="card"><div class="diamond">💎</div><div class="amount">310 เพชร</div><div class="price">86 ฿</div><button class="order" onclick="order('310 เพชร - 86 บาท')">สั่งซื้อ</button></div>
+
+<div class="card"><div class="diamond">💎</div><div class="amount">378 เพชร</div><div class="price">105 ฿</div><button class="order" onclick="order('378 เพชร - 105 บาท')">สั่งซื้อ</button></div>
+
+<div class="card"><div class="diamond">💎</div><div class="amount">446 เพชร</div><div class="price">124 ฿</div><button class="order" onclick="order('446 เพชร - 124 บาท')">สั่งซื้อ</button></div>
+
+<div class="card"><div class="diamond">💎</div><div class="amount">517 เพชร</div><div class="price">143 ฿</div><button class="order" onclick="order('517 เพชร - 143 บาท')">สั่งซื้อ</button></div>
+
+<div class="card"><div class="diamond">💎</div><div class="amount">620 เพชร</div><div class="price">171 ฿</div><button class="order" onclick="order('620 เพชร - 171 บาท')">สั่งซื้อ</button></div>
+
+<div class="card"><div class="diamond">💎</div><div class="amount">862 เพชร</div><div class="price">238 ฿</div><button class="order" onclick="order('862 เพชร - 238 บาท')">สั่งซื้อ</button></div>
+
+<div class="card"><div class="diamond">💎</div><div class="amount">1052 เพชร</div><div class="price">285 ฿</div><button class="order" onclick="order('1052 เพชร - 285 บาท')">สั่งซื้อ</button></div>
+
+<div class="card"><div class="diamond">💎</div><div class="amount">68 เพชร</div><div class="price">20 ฿</div><button class="order" onclick="order('68 เพชร - 20 บาท')">สั่งซื้อ</button></div>
+
+<div class="card"><div class="diamond">💎</div><div class="amount">136 เพชร</div><div class="price">39 ฿</div><button class="order" onclick="order('136 เพชร - 39 บาท')">สั่งซื้อ</button></div>
+
+<div class="card"><div class="diamond">💎</div><div class="amount">205 เพชร</div><div class="price">58 ฿</div><button class="order" onclick="order('205 เพชร - 58 บาท')">สั่งซื้อ</button></div>
+
+<div class="card"><div class="diamond">💎</div><div class="amount">273 เพชร</div><div class="price">77 ฿</div><button class="order" onclick="order('273 เพชร - 77 บาท')">สั่งซื้อ</button></div>
+
+<div class="card"><div class="diamond">💎</div><div class="amount">344 เพชร</div><div class="price">96 ฿</div><button class="order" onclick="order('344 เพชร - 96 บาท')">สั่งซื้อ</button></div>
+
+<div class="card"><div class="diamond">💎</div><div class="amount">412 เพชร</div><div class="price">114 ฿</div><button class="order" onclick="order('412 เพชร - 114 บาท')">สั่งซื้อ</button></div>
+
+<div class="card"><div class="diamond">💎</div><div class="amount">482 เพชร</div><div class="price">133 ฿</div><button class="order" onclick="order('482 เพชร - 133 บาท')">สั่งซื้อ</button></div>
+
+<div class="card"><div class="diamond">💎</div><div class="amount">550 เพชร</div><div class="price">152 ฿</div><button class="order" onclick="order('550 เพชร - 152 บาท')">สั่งซื้อ</button></div>
+
+<div class="card"><div class="diamond">💎</div><div class="amount">690 เพชร</div><div class="price">190 ฿</div><button class="order" onclick="order('690 เพชร - 190 บาท')">สั่งซื้อ</button></div>
+
+<div class="card"><div class="diamond">💎</div><div class="amount">1000 เพชร</div><div class="price">276 ฿</div><button class="order" onclick="order('1000 เพชร - 276 บาท')">สั่งซื้อ</button></div>
+
+<div class="card"><div class="diamond">💎</div><div class="amount">1224 เพชร</div><div class="price">332 ฿</div><button class="order" onclick="order('1224 เพชร - 332 บาท')">สั่งซื้อ</button></div>
+
+</div>
+
+<div class="recommend">
+<h2 class="title">📦 แพ็กเกจแนะนำ</h2>
+
+<div class="packages">
+
+<div class="package blue">
+<div class="emoji">💙</div>
+<div>W LITE</div>
+<div>สมาชิกเพชร</div>
+<div class="package-price">33 บาท</div>
+</div>
+
+<div class="package yellow">
+<div class="emoji">💛</div>
+<div>M</div>
+<div>สมาชิกเพชร</div>
+<div class="package-price">285 บาท</div>
+</div>
+
+<div class="package purple">
+<div class="emoji">💜</div>
+<div>W</div>
+<div>สมาชิกเพชร</div>
+<div class="package-price">65 บาท</div>
+</div>
+
+</div>
+</div>
+
+<div class="info">
+
+<h2>📌 วิธีสั่งซื้อ</h2>
+
+<p>1. ใช้ UID ในการเติม</p>
+<p>2. เลือกแพ็กเพชร</p>
+<p>3. ชำระเงิน</p>
+<p>4. รับเพชรทันที</p>
+
+<div class="payment">
+<h2>💳 ช่องทางชำระเงิน</h2>
+<p>TrueMoney Wallet • PromptPay</p>
+</div>
+
+<p>⚡ บริการ 24 ชั่วโมง • ปลอดภัย 100% • เติมไว</p>
+
+</div>
+
+<div class="contact">
+
+<h2>📞 ช่องทางการติดต่อ</h2>
+
+<p style="margin-top:10px;color:#aaa;">
+มีปัญหาหรือสอบถามเรื่องออเดอร์ ทักมาได้เลย
+</p>
+
+<div class="contact-box">
+
+<a href="#" onclick="contact('Facebook FOCUS SHOP')">
+💙 Facebook<br>FOCUS SHOP
+</a>
+
+<a href="#" onclick="contact('TikTok @oleoic_18')">
+🖤 TikTok<br>@oleoic_18
+</a>
+
+</div>
+</div>
+
+</div>
+
+<footer>
+© 2026 FOCUS SHOP — TOP UP DIAMOND FREE FIRE
+</footer>
+
+<script>
+function order(product){
+  alert(
+    "🛒 รายการที่เลือก\n\n" +
+    product +
+    "\n\n📌 กรุณาติดต่อ FOCUS SHOP เพื่อส่ง UID และชำระเงิน"
+  );
+}
+
+function contact(name){
+  alert(
+    "📞 ช่องทางติดต่อ\n\n" +
+    name +
+    "\n\nกรุณาค้นหา FOCUS SHOP หรือ @oleoic_18 ในแอปนั้น"
+  );
+}
+</script>
 
 </body>
 </html>
