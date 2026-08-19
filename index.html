@@ -1,706 +1,148 @@
-<!DOCTYPE html>
-<html lang="th">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FOCUS SHOP | Free Fire Top Up</title>
-
-<style>
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-}
-
-body{
-  font-family:Arial,sans-serif;
-  background:#080812;
-  color:#fff;
-}
-
-.container{
-  max-width:720px;
-  margin:auto;
-  padding:16px;
-}
-
-header{
-  text-align:center;
-  padding:25px 10px;
-}
-
-.logo{
-  font-size:38px;
-  font-weight:900;
-  background:linear-gradient(90deg,#55d9ff,#8c5cff,#ff72e6);
-  -webkit-background-clip:text;
-  color:transparent;
-  text-shadow:0 0 20px #573cff;
-}
-
-header p{
-  color:#aaa;
-  margin-top:8px;
-}
-
-/* UID */
-
-.box{
-  background:#111323;
-  border:1px solid #292d4c;
-  border-radius:18px;
-  padding:18px;
-  margin-bottom:18px;
-}
-
-.box h2{
-  font-size:19px;
-  margin-bottom:12px;
-}
-
-input{
-  width:100%;
-  padding:14px;
-  border-radius:12px;
-  border:1px solid #353957;
-  background:#080a15;
-  color:#fff;
-  outline:none;
-  font-size:16px;
-}
-
-input:focus{
-  border-color:#765cff;
-}
-
-/* Products */
-
-.title{
-  font-size:22px;
-  margin:25px 0 12px;
-}
-
-.desc{
-  color:#999;
-  margin-bottom:15px;
-}
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:10px;
-}
-
-.card{
-  background:#111323;
-  border:1px solid #292d4c;
-  border-radius:15px;
-  padding:15px 10px;
-  text-align:center;
-  cursor:pointer;
-  transition:.2s;
-}
-
-.card:hover{
-  border-color:#765cff;
-  transform:translateY(-2px);
-}
-
-.card.selected{
-  border:2px solid #8d6cff;
-  background:#171532;
-  box-shadow:0 0 18px rgba(115,80,255,.3);
-}
-
-.diamond{
-  font-size:25px;
-}
-
-.amount{
-  font-weight:bold;
-  margin:6px 0;
-}
-
-.price{
-  color:#69d8ff;
-  font-size:19px;
-  font-weight:bold;
-}
-
-/* Summary */
-
-.summary{
-  background:#111323;
-  border:1px solid #292d4c;
-  border-radius:18px;
-  padding:18px;
-  margin-top:20px;
-}
-
-.summary-row{
-  display:flex;
-  justify-content:space-between;
-  padding:8px 0;
-  color:#ccc;
-}
-
-.total{
-  border-top:1px solid #292d4c;
-  margin-top:8px;
-  padding-top:14px;
-  display:flex;
-  justify-content:space-between;
-  font-size:21px;
-  font-weight:bold;
-}
-
-.total span:last-child{
-  color:#8c72ff;
-}
-
-/* Payment */
-
-.payment-options{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:10px;
-}
-
-.payment{
-  background:#0b0d19;
-  border:1px solid #343852;
-  border-radius:13px;
-  padding:15px;
-  text-align:center;
-  cursor:pointer;
-}
-
-.payment.selected{
-  border:2px solid #8d6cff;
-  background:#171532;
-}
-
-.payment-icon{
-  font-size:27px;
-  margin-bottom:5px;
-}
-
-/* Order */
-
-.order-btn{
-  width:100%;
-  margin-top:18px;
-  padding:15px;
-  border:none;
-  border-radius:13px;
-  background:linear-gradient(90deg,#6046ff,#a05cff);
-  color:white;
-  font-size:17px;
-  font-weight:bold;
-  cursor:pointer;
-  box-shadow:0 0 18px rgba(105,75,255,.35);
-}
-
-.order-btn:active{
-  transform:scale(.98);
-}
-
-/* Recommended */
-
-.packages{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:10px;
-}
-
-.package{
-  text-align:center;
-  padding:16px 7px;
-  border-radius:15px;
-  background:#111323;
-}
-
-.blue{
-  border:1px solid #299cff;
-}
-
-.yellow{
-  border:1px solid #ffd52e;
-}
-
-.purple{
-  border:1px solid #a85cff;
-}
-
-.package-icon{
-  font-size:25px;
-}
-
-.package h3{
-  margin:5px 0;
-}
-
-.package p{
-  color:#999;
-  font-size:13px;
-}
-
-.package b{
-  display:block;
-  margin-top:7px;
-  font-size:18px;
-}
-
-/* How to */
-
-.steps{
-  display:grid;
-  gap:9px;
-}
-
-.step{
-  padding:13px;
-  background:#111323;
-  border:1px solid #292d4c;
-  border-radius:12px;
-}
-
-/* Contact */
-
-.contact{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:9px;
-}
-
-.contact a{
-  text-decoration:none;
-  color:white;
-  text-align:center;
-  padding:15px 5px;
-  background:#111323;
-  border:1px solid #292d4c;
-  border-radius:14px;
-}
-
-.contact-icon{
-  font-size:25px;
-  margin-bottom:6px;
-}
-
-.contact small{
-  color:#999;
-}
-
-/* Footer */
-
-footer{
-  text-align:center;
-  color:#777;
-  padding:30px 10px 15px;
-  font-size:12px;
-}
-
-.notice{
-  text-align:center;
-  color:#aaa;
-  margin-top:18px;
-  font-size:13px;
-}
-
-@media(max-width:500px){
-
-  .logo{
-    font-size:32px;
-  }
-
-  .grid{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-  .packages{
-    grid-template-columns:1fr;
-  }
-
-  .contact{
-    grid-template-columns:1fr;
-  }
-}
-</style>
-</head>
-
-<body>
-
-<div class="container">
-
-<header>
-  <div class="logo">FOCUS SHOP</div>
-  <p>💎 TOP UP DIAMOND FREE FIRE</p>
-  <p>บริการเติมเพชร ราคาติดต่อ</p>
-</header>
-
-<!-- UID -->
-
-<div class="box">
-
-<h2>🆔 UID Free Fire</h2>
-
-<input
-  id="uid"
-  type="text"
-  inputmode="numeric"
-  placeholder="กรอก UID ของคุณ"
->
-
-</div>
-
-<!-- Diamonds -->
-
-<h2 class="title">💎 เลือกจำนวนเพชร</h2>
-
-<p class="desc">
-เลือกแพ็กเพชรที่ต้องการ
-</p>
-
-<div class="grid">
-
-<div class="card" data-diamond="33" data-price="11" onclick="selectDiamond(this)">
-<div class="diamond">💎</div>
-<div class="amount">33 เพชร</div>
-<div class="price">11 ฿</div>
-</div>
-
-<div class="card" data-diamond="101" data-price="30" onclick="selectDiamond(this)">
-<div class="diamond">💎</div>
-<div class="amount">101 เพชร</div>
-<div class="price">30 ฿</div>
-</div>
-
-<div class="card" data-diamond="172" data-price="49" onclick="selectDiamond(this)">
-<div class="diamond">💎</div>
-<div class="amount">172 เพชร</div>
-<div class="price">49 ฿</div>
-</div>
-
-<div class="card" data-diamond="240" data-price="68" onclick="selectDiamond(this)">
-<div class="diamond">💎</div>
-<div class="amount">240 เพชร</div>
-<div class="price">68 ฿</div>
-</div>
-
-<div class="card" data-diamond="310" data-price="86" onclick="selectDiamond(this)">
-<div class="diamond">💎</div>
-<div class="amount">310 เพชร</div>
-<div class="price">86 ฿</div>
-</div>
-
-<div class="card" data-diamond="378" data-price="105" onclick="selectDiamond(this)">
-<div class="diamond">💎</div>
-<div class="amount">378 เพชร</div>
-<div class="price">105 ฿</div>
-</div>
-
-<div class="card" data-diamond="446" data-price="124" onclick="selectDiamond(this)">
-<div class="diamond">💎</div>
-<div class="amount">446 เพชร</div>
-<div class="price">124 ฿</div>
-</div>
-
-<div class="card" data-diamond="517" data-price="143" onclick="selectDiamond(this)">
-<div class="diamond">💎</div>
-<div class="amount">517 เพชร</div>
-<div class="price">143 ฿</div>
-</div>
-
-<div class="card" data-diamond="620" data-price="171" onclick="selectDiamond(this)">
-<div class="diamond">💎</div>
-<div class="amount">620 เพชร</div>
-<div class="price">171 ฿</div>
-</div>
-
-<div class="card" data-diamond="862" data-price="238" onclick="selectDiamond(this)">
-<div class="diamond">💎</div>
-<div class="amount">862 เพชร</div>
-<div class="price">238 ฿</div>
-</div>
-
-<div class="card" data-diamond="1052" data-price="285" onclick="selectDiamond(this)">
-<div class="diamond">💎</div>
-<div class="amount">1052 เพชร</div>
-<div class="price">285 ฿</div>
-</div>
-
-<div class="card" data-diamond="68" data-price="20" onclick="selectDiamond(this)">
-<div class="diamond">💎</div>
-<div class="amount">68 เพชร</div>
-<div class="price">20 ฿</div>
-</div>
-
-<div class="card" data-diamond="136" data-price="39" onclick="selectDiamond(this)">
-<div class="diamond">💎</div>
-<div class="amount">136 เพชร</div>
-<div class="price">39 ฿</div>
-</div>
-
-<div class="card" data-diamond="205" data-price="58" onclick="selectDiamond(this)">
-<div class="diamond">💎</div>
-<div class="amount">205 เพชร</div>
-<div class="price">58 ฿</div>
-</div>
-
-<div class="card" data-diamond="273" data-price="77" onclick="selectDiamond(this)">
-<div class="diamond">💎</div>
-<div class="amount">273 เพชร</div>
-<div class="price">77 ฿</div>
-</div>
-
-<div class="card" data-diamond="344" data-price="96" onclick="selectDiamond(this)">
-<div class="diamond">💎</div>
-<div class="amount">344 เพชร</div>
-<div class="price">96 ฿</div>
-</div>
-
-<div class="card" data-diamond="412" data-price="114" onclick="selectDiamond(this)">
-<div class="diamond">💎</div>
-<div class="amount">412 เพชร</div>
-<div class="price">114 ฿</div>
-</div>
-
-<div class="card" data-diamond="482" data-price="133" onclick="selectDiamond(this)">
-<div class="diamond">💎</div>
-<div class="amount">482 เพชร</div>
-<div class="price">133 ฿</div>
-</div>
-
-<div class="card" data-diamond="550" data-price="152" onclick="selectDiamond(this)">
-<div class="diamond">💎</div>
-<div class="amount">550 เพชร</div>
-<div class="price">152 ฿</div>
-</div>
-
-<div class="card" data-diamond="690" data-price="190" onclick="selectDiamond(this)">
-<div class="diamond">💎</div>
-<div class="amount">690 เพชร</div>
-<div class="price">190 ฿</div>
-</div>
-
-<div class="card" data-diamond="1000" data-price="276" onclick="selectDiamond(this)">
-<div class="diamond">💎</div>
-<div class="amount">1000 เพชร</div>
-<div class="price">276 ฿</div>
-</div>
-
-<div class="card" data-diamond="1224" data-price="332" onclick="selectDiamond(this)">
-<div class="diamond">💎</div>
-<div class="amount">1224 เพชร</div>
-<div class="price">332 ฿</div>
-</div>
-
-</div>
-
-<!-- Summary -->
-
-<div class="summary">
-
-<h2>🛒 สรุปรายการ</h2>
-
-<div class="summary-row">
-<span>แพ็กที่เลือก</span>
-<span id="selectedDiamond">ยังไม่ได้เลือก</span>
-</div>
-
-<div class="total">
-<span>ยอดรวม</span>
-<span id="total">0 ฿</span>
-</div>
-
-</div>
-
-<!-- Payment -->
-
-<div class="box" style="margin-top:18px">
-
-<h2>💳 ช่องทางชำระเงิน</h2>
-
-<div class="payment-options">
-
-<div class="payment" onclick="selectPayment(this,'PromptPay')">
-<div class="payment-icon">🏦</div>
-PromptPay
-</div>
-
-<div class="payment" onclick="selectPayment(this,'TrueMoney Wallet')">
-<div class="payment-icon">💰</div>
-TrueMoney Wallet
-</div>
-
-</div>
-
-</div>
-
-<button class="order-btn" onclick="submitOrder()">
-🛒 ดำเนินการสั่งซื้อ
-</button>
-
-<div class="notice">
-ระบบนี้เป็นหน้าสั่งซื้อเบื้องต้น กรุณาตรวจสอบข้อมูลก่อนชำระเงิน
-</div>
-
-<!-- Recommended -->
-
-<h2 class="title">📦 แพ็กเกจแนะนำ</h2>
-
-<div class="packages">
-
-<div class="package blue">
-<div class="package-icon">💙</div>
-<h3>W LITE</h3>
-<p>สมาชิกเพชร</p>
-<b>33 บาท</b>
-</div>
-
-<div class="package yellow">
-<div class="package-icon">💛</div>
-<h3>M</h3>
-<p>สมาชิกเพชร</p>
-<b>285 บาท</b>
-</div>
-
-<div class="package purple">
-<div class="package-icon">💜</div>
-<h3>W</h3>
-<p>สมาชิกเพชร</p>
-<b>65 บาท</b>
-</div>
-
-</div>
-
-<!-- How to -->
-
-<div class="box" style="margin-top:25px">
-
-<h2>📌 วิธีสั่งซื้อ</h2>
-
-<div class="steps">
-
-<div class="step">1️⃣ ใช้ UID ในการเติม</div>
-<div class="step">2️⃣ เลือกแพ็กเพชร</div>
-<div class="step">3️⃣ ชำระเงิน</div>
-<div class="step">4️⃣ รับเพชรทันที</div>
-
-</div>
-
-</div>
-
-<div class="notice">
-⚡ บริการ 24 ชั่วโมง • ปลอดภัย 100% • เติมไว
-</div>
-
-<!-- Contact -->
-
-<h2 class="title">📞 ช่องทางการติดต่อ</h2>
-
-<p style="text-align:center;color:#999;margin-bottom:15px">
-มีปัญหาหรือสอบถามเรื่องออเดอร์ ทักมาได้เลย
-</p>
-
-<div class="contact">
-
-<a href="#">
-<div class="contact-icon">💙</div>
-<b>Facebook</b><br>
-<small>FOCUS SHOP</small>
-</a>
-
-<a href="#">
-<div class="contact-icon">🖤</div>
-<b>TikTok</b><br>
-<small>@oleoic_18</small>
-</a>
-
-<a href="#">
-<div class="contact-icon">🩷</div>
-<b>Instagram</b><br>
-<small>@oleoic_548</small>
-</a>
-
-</div>
-
-<footer>
-© 2026 FOCUS SHOP — TOP UP DIAMOND FREE FIRE
-</footer>
-
-</div>
-
-<script>
-
-let selectedProduct = null;
-let selectedPayment = null;
-
-function selectDiamond(card){
-
-document.querySelectorAll('.card').forEach(c=>{
-c.classList.remove('selected');
-});
-
-card.classList.add('selected');
-
-selectedProduct = {
-diamond:card.dataset.diamond,
-price:card.dataset.price
-};
-
-document.getElementById('selectedDiamond').textContent =
-selectedProduct.diamond + ' เพชร';
-
-document.getElementById('total').textContent =
-selectedProduct.price + ' ฿';
-
-}
-
-function selectPayment(element,payment){
-
-document.querySelectorAll('.payment').forEach(p=>{
-p.classList.remove('selected');
-});
-
-element.classList.add('selected');
-
-selectedPayment = payment;
-
-}
-
-function submitOrder(){
-
-const uid = document.getElementById('uid').value.trim();
-
-if(!uid){
-alert('กรุณากรอก UID Free Fire');
-return;
-}
-
-if(!selectedProduct){
-alert('กรุณาเลือกแพ็กเพชร');
-return;
-}
-
-if(!selectedPayment){
-alert('กรุณาเลือกช่องทางชำระเงิน');
-return;
-}
-
-alert(
-'📋 รายละเอียดคำสั่งซื้อ\n\n' +
-'UID: ' + uid + '\n' +
-'แพ็ก: ' + selectedProduct.diamond + ' เพชร\n' +
-'ราคา: ' + selectedProduct.price + ' บาท\n' +
-'ชำระผ่าน: ' + selectedPayment +
-'\n\nกรุณาติดต่อ FOCUS SHOP เพื่อดำเนินการต่อ'
-);
-
-}
-
-</script>
-
-</body>
-</html>
+from pathlib import Path
+from PIL import Image
+import zipfile, shutil, re
+
+# ==============================
+# ตั้งค่าไฟล์
+# ==============================
+
+zip_in = Path("/mnt/data/FOCUS_SHOP_catalog.zip")
+shirt_src = Path("/mnt/data/04BA8608-8538-44B7-BAC2-C0053EE6E35C.jpeg")
+
+work = Path("/mnt/data/FOCUS_SHOP_catalog_updated")
+
+if work.exists():
+    shutil.rmtree(work)
+
+work.mkdir(parents=True)
+
+# ==============================
+# แตกไฟล์เว็บเดิม
+# ==============================
+
+with zipfile.ZipFile(zip_in, "r") as z:
+    z.extractall(work)
+
+# ==============================
+# เพิ่มรูปเสื้อ
+# ==============================
+
+assets = work / "assets"
+assets.mkdir(exist_ok=True)
+
+shutil.copy2(
+    shirt_src,
+    assets / "jacket_added.jpg"
+)
+
+# ==============================
+# แก้ไข index.html
+# ==============================
+
+index = work / "index.html"
+
+html = index.read_text(encoding="utf-8")
+
+# เปลี่ยนรูปเสื้อเดิมเป็นรูปใหม่
+html = html.replace(
+    'src="assets/jacket.jpg"',
+    'src="assets/jacket_added.jpg"'
+)
+
+# ==============================
+# ลบข้อความ "ราคาเพชร"
+# ==============================
+
+patterns = [
+    r'<[^>]*>ราคาเพชร[^<]*</[^>]*>',
+    r'ราคาเพชร\s*[:：]?\s*[\d,]+\s*(?:เพชร|บาท)?',
+    r'ราคาเพชร\s*[:：]?\s*[\d,.]+',
+]
+
+for pattern in patterns:
+    html = re.sub(
+        pattern,
+        '',
+        html,
+        flags=re.IGNORECASE
+    )
+
+# ==============================
+# เปลี่ยนชื่อให้เหลือ "ราคาสินค้า"
+# ==============================
+
+html = html.replace(
+    "ราคาเพชร",
+    "ราคาสินค้า"
+)
+
+html = html.replace(
+    "ราคาเพชร:",
+    "ราคาสินค้า:"
+)
+
+html = html.replace(
+    "ราคาเพชร :",
+    "ราคาสินค้า :"
+)
+
+# ==============================
+# ลบช่องกรอกราคาเพชร
+# ==============================
+
+html = re.sub(
+    r'<label[^>]*>ราคาเพชร.*?</label>',
+    '',
+    html,
+    flags=re.IGNORECASE | re.DOTALL
+)
+
+html = re.sub(
+    r'<input[^>]*(?:ราคาเพชร|diamond)[^>]*>',
+    '',
+    html,
+    flags=re.IGNORECASE
+)
+
+# ==============================
+# บันทึก HTML
+# ==============================
+
+index.write_text(
+    html,
+    encoding="utf-8"
+)
+
+# ==============================
+# สร้าง ZIP ใหม่
+# ==============================
+
+zip_out = Path(
+    "/mnt/data/FOCUS_SHOP_catalog_updated.zip"
+)
+
+if zip_out.exists():
+    zip_out.unlink()
+
+with zipfile.ZipFile(
+    zip_out,
+    "w",
+    zipfile.ZIP_DEFLATED
+) as z:
+
+    for p in work.rglob("*"):
+
+        if p.is_file():
+
+            z.write(
+                p,
+                p.relative_to(work)
+            )
+
+print("================================")
+print("อัปเดต FOCUS SHOP เรียบร้อย")
+print("================================")
+print("ลบราคาเพชรแล้ว")
+print("เหลือเฉพาะราคาสินค้า")
+print("เพิ่มรูปเสื้อแล้ว")
+print(f"ไฟล์ ZIP: {zip_out}")
